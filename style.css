@@ -3,47 +3,290 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+/*index.html File Stylesheet*/
+/*Main Content Area*/
 .mainContainer{
+	background-color: #0B1D33;
 	width: 100%;
 	height: 100vh;
-	background-color: black;
+	display: flex;
+	flex-direction: column;
 	color: white;
+}
+/*Header*/
+.mainContainer .header{
+	position: sticky;
+  	top: 0;
+  	height: 60px;
+  	background-color: rgba(11, 29, 51, 0.95); 
+  	backdrop-filter: blur(8px);
+  	display: flex;
+  	align-items: center;
+  	justify-content: space-between;
+  	padding: 0 20px;
+  	border-bottom: 2px solid #ffd700; 
+  	z-index: 1000;
+}
+.mainContainer .header .logo{
+	display: flex;
+	gap: 50px;
+}
+.mainContainer .header p{
+	font-weight: bold;
+	font-size: 24px;
+}
+.mainContainer .header .logo .btnMenu{
+	display: none;
+}
+.mainContainer .header .links{
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+}
+.mainContainer .header .links a{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 8px 15px; 
+    border-radius: 5px;
+    transition: all 0.3s ease; 
+}
+.mainContainer .header .links a:hover{
+	color: rgba(11, 29, 51, 0.95);
+    background-color: rgba(255, 215, 150, 0.9);
+}
+/*Body*/
+.mainContainer .body{
+	flex-grow: 1;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 }
-.container{
-	border: 1px solid white;
-	border-radius: 5px;
-	padding: 20px;
+/*Inner Body*/
+.mainContainer .innerBody{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 20px;
+	padding: 10px;
+	width: 25%;
 }
-.cercle{
+.mainContainer .body .innerBody p{
+	font-weight: bold;
+	font-size: 22px;
+	text-align: center;
+}
+.mainContainer .body .tossCoin{
 	width: 150px;
 	height: 150px;
-	border: 2px solid white;
-	border-radius: 50%;
+	border-radius: 75px;
+	margin-top: 20px;
+}
+.mainContainer .body .tossCoin img{
+	width: 150px;
+}
+
+
+
+/* Animation for coin toss */
+@keyframes toss {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    30% {
+        transform: translateY(-150px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(1800deg);
+    }
+}
+
+.mainContainer .body .tossCoin img.animating {
+    animation: toss 1.5s ease-out forwards;
+}
+
+/* Remove the commented animation from .mainContainer .body .tossCoin img */
+
+
+
+
+
+.mainContainer .body input[type="text"]{
+	margin-top: 20px;
+	padding: 5px 15px;
+	font-size: 16px;
+	width: 90%;
+	border: none;
+	border-radius: 5px;
+}
+.mainContainer .body .radio{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	padding: 0 15px;
+	margin-top: 10px;
+	font-size: 20px;
+}
+.mainContainer .body input[type="radio"]{
+	width: 15px;
+	height: 15px;
+}
+.mainContainer .innerBody .btnToss{
+	border: none;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+    background-color: rgba(255, 215, 150, 0.9);
+    margin-top: 30px;
+}
+.mainContainer .innerBody .btnToss:hover{
+	background-color: #ffd700;
+	cursor: pointer;
+}
+/*Footer*/
+.mainContainer .footer{
+	background-color: #050f1a;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 60px;
+  	text-align: center;
+  	border-top: 1px solid #2a3b4c;
 }
-h2{
-	width: 90%;
-	padding: 5px 15px;
-	border-radius: 5px;
-	background-color: lightseagreen;
+
+
+/*About Page Style*/
+.innerBodyAbout{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
 	text-align: center;
 }
-.btnFlip{
-	width: 90%;
-	border: 0;
+.about{
+	padding: 15px;
+	border: 1px solid gray;
 	border-radius: 5px;
+	width: 90%;
+	box-shadow: 2px 3px 10px 1px darkslateblue;
+}
+.about p{
+	text-align: justify;
+}
+.pashto p{
+	text-align: right !important;
+	text-align: justify;
+}
+.mainContainer .body .innerBody .english p{
+	font-weight: normal;
 	font-size: 16px;
+	text-align: justify;
+}
+
+
+/*Contac Page Style*/
+.mainContainer .innerBodyContact{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 35%;
+}
+.mainContainer .contact{
+	margin-top: 50px;
+	width: 100%;
+}
+.mainContainer .contact p{
+	font-size: 18px !important;
+	font-weight: normal !important;
+	margin-top: 10px;
+	text-align: left !important;
+}
+.mainContainer .contact span{
+	font-size: 20px;
 	font-weight: bold;
+}
+.mainContainer .contact a{
+	font-size: 25px;
 	color: white;
-	padding: 5px 15px;
-	background-color: lightsalmon;
+	transition: all 3sec ease;
+}
+.mainContainer .contact a:hover{
+	color: #ffd700;
+}
+/*Media Query for Responsive*/
+/* Media Query for Responsive */
+@media only screen and (max-width: 767px) {
+	.mainContainer{
+		height: auto;
+	}
+	.mainContainerHome{
+		height: calc(100vh + 60px);
+	}
+	.mainContainerContact{
+		height: calc(100vh + 120px);
+	}
+	.mainContainer .header{
+		height: 60px !important;
+		min-height: 60px;
+	}
+	.mainContainer .innerBody{
+		width: 80%;
+		gap: 10px;
+	}
+	.mainContainer .innerBodyContact{
+		width: 90%;
+	}
+	.mainContainer .footer{
+		height: 60px !important;
+		min-height: 60px;
+	}
+    .mainContainer .header .logo {
+        width: 100%;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    .mainContainer .header .name{
+    	flex-grow: 1;
+    }
+    .mainContainer .header .logo .btnMenu {
+        display: block;
+    }
+    .mainContainer .header .links {
+        display: flex;
+        justify-content: flex-start;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(11, 29, 51, 0.98);
+        flex-direction: column;
+        padding: 20px;
+        gap: 5px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    /* Class to show the menu*/
+    .mainContainer .header .links.active {
+        transform: translateX(0);
+    }
+    
+    .mainContainer .header .links a{
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+    }
+    .mainContainer .footer{
+    	z-index: 1000;
+    }
 }
