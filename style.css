@@ -243,6 +243,9 @@
 	.mainContainer .innerBodyContact{
 		width: 90%;
 	}
+	.mainContainer .innerBodyAbout{
+		width: 90%;
+	}
 	.mainContainer .footer{
 		height: 60px !important;
 		min-height: 60px;
